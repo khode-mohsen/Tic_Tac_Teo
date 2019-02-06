@@ -40,9 +40,11 @@ def getPlayerMove(board):
         print("What is your next move? (1-9)" )
         move = input()
     return int(move)
-def chooseRandomMoveFromList(board, movesList):
+def chooseRandomMoveFromList(board):
     #Returns a valid move from the passed list on the passed board
     #Returns None if there is no valid move
-    possibleMoves = []
+    
+    possibleMoves = [a+1 for a,b in enumerate(board) if b not in 'XO']
+    return random.choise(possibleMoves)
 if __name__ == '__main__':
     whoGuesFirst()
